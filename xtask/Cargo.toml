@@ -1,0 +1,9 @@
+[package]
+name = "xtask"
+edition = "2024"
+publish = false
+
+[dependencies]
+clap = { version = "4.5.51", features = ["derive"] }
+const_format = "0.2.35"
+regex = "1.12.2"

@@ -1,0 +1,57 @@
+[sources]
+inputs = [
+    # "./jars/fabric-api-0.138.3+1.21.10/*.jar",
+    "./jars/fabric-loader-0.18.2.jar",
+    "./jars/java-21-base.jar",
+    "./jars/slf4j-api-2.0.16.jar"
+]
+output = "./full-bindings.rs"
+
+[proxy]
+package = "com.github.pitchblacknights.oxidizemc.proxy"
+output = "./java-proxy"
+
+[[include]]
+match = [
+    "net.fabricmc.api.**",
+    "net.fabricmc.loader.api.**",
+    "java.util.Collection",
+    "java.util.function.Consumer",
+    "java.util.function.BiConsumer",
+    "java.lang.String",
+    "java.lang.Class",
+    "java.lang.Throwable",
+    "java.lang.StackTraceElement",
+    "java.lang.Object",
+    "org.slf4j.Logger",
+    "org.slf4j.LoggerFactory",
+]
+bind = true
+
+# [[include]]
+# match = [
+#     "net.fabricmc.api.ClientModInitializer",
+#     "net.fabricmc.api.DedicatedServerModInitializer",
+#     "net.fabricmc.api.ModInitializer",
+#     # "net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint",
+# ]
+# proxy = true
+
+[[doc]]
+match = [
+    "net.fabricmc.api.**",
+    "net.fabricmc.loader.api.**",
+]
+class-url = "https://maven.fabricmc.net/docs/fabric-loader-0.17.3/{CLASS}.html"
+method-url = "https://maven.fabricmc.net/docs/fabric-loader-0.17.3/{CLASS}.html#{METHOD}({ARGUMENTS})"
+field-url = "https://maven.fabricmc.net/docs/fabric-loader-0.17.3/{CLASS}.html#{FIELD}"
+constructor-url = "https://maven.fabricmc.net/docs/fabric-loader-0.17.3/{CLASS}.html#{CLASS.INNER}({ARGUMENTS})"
+
+# [[doc]]
+# match = [
+#     "net.fabricmc.fabric.api.**",
+# ]
+# class-url = "https://maven.fabricmc.net/docs/fabric-api-0.138.3+1.21.10/{CLASS}.html"
+# method-url = "https://maven.fabricmc.net/docs/fabric-api-0.138.3+1.21.10/{CLASS}.html#{METHOD}({ARGUMENTS})"
+# field-url = "https://maven.fabricmc.net/docs/fabric-api-0.138.3+1.21.10/{CLASS}.html#{FIELD}"
+# constructor-url = "https://maven.fabricmc.net/docs/fabric-api-0.138.3+1.21.10/{CLASS}.html#{CLASS.INNER}({ARGUMENTS})"

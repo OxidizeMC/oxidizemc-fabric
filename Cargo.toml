@@ -1,0 +1,15 @@
+[package]
+name = "oxidizemc-fabric"
+version = "0.0.0-dev.1"
+edition = "2024"
+authors = ["PitchBlackNights <pitchblacknights@proton.me>"]
+repository = "https://github.com/oxidizemc/oxidizemc-fabric"
+license = "MIT"
+readme = "README.md"
+
+[dependencies]
+jsys = { path = "./jsys" }
+java-oxide = { git = "https://github.com/OxidizeMC/java-oxide", rev = "1e36ecbeeef8536a4d3370ffd0dc293ddce23294" }
+
+[workspace]
+members = ["jsys", "xtask"]
