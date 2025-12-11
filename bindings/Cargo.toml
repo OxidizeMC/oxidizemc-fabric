@@ -1,0 +1,15 @@
+[package]
+name = "oxidizemc-fabric-bindings"
+description = "Minecraft Java related bindings for the `oxidizemc-fabric` crate"
+version = "0.0.0-dev.1"
+edition = "2024"
+authors = ["PitchBlackNights <pitchblacknights@proton.me>"]
+repository = "https://github.com/oxidizemc/oxidizemc-fabric"
+documentation = "https://docs.rs/oxidizemc-fabric-bindings"
+keywords = ["jvm", "jni", "java", "minecraft"]
+categories = ["external-ffi-bindings"]
+license = "MIT"
+readme = "../README.md"
+
+[dependencies]
+java-oxide = "0.1.0"

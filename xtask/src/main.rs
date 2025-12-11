@@ -16,8 +16,8 @@ pub const EXE: &str = ".exe";
 /// Path Separator
 pub const PS: char = std::path::MAIN_SEPARATOR;
 pub const INSTALL_DIR: &str = formatcp!("{}{PS}xtask-temp", env!("CARGO_MANIFEST_DIR"));
-pub const JOG_PATH: &str = formatcp!("{}{PS}java-oxide", INSTALL_DIR);
-pub const JOG_BIN_PATH: &str = formatcp!("{}{PS}java-oxide-bin{EXE}", INSTALL_DIR);
+pub const JOG_PATH: &str = formatcp!("{}{PS}java-oxide-gen", INSTALL_DIR);
+pub const JOG_BIN_PATH: &str = formatcp!("{}{PS}jog{EXE}", INSTALL_DIR);
 pub const FORM_PATH: &str = formatcp!("{}{PS}form", INSTALL_DIR);
 pub const FORM_BIN_PATH: &str = formatcp!("{}{PS}form-bin{EXE}", INSTALL_DIR);
 

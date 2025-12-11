@@ -1,7 +1,0 @@
-[package]
-name = "jsys"
-edition = "2024"
-publish = false
-
-[dependencies]
-java-oxide = { git = "https://github.com/OxidizeMC/java-oxide", rev = "1e36ecbeeef8536a4d3370ffd0dc293ddce23294" }

@@ -1,2 +1,6 @@
 /target
-/jsys/jars
+/bindings/jars
+/bindings/cargo-check-output.txt
+/bindings/java-oxide-output.txt
+/bindings/full-bindings.rs
+/xtask/xtask-temp

@@ -1,15 +1,31 @@
 [package]
 name = "oxidizemc-fabric"
+description = "Library for interfacing with the FabricMC APIs"
 version = "0.0.0-dev.1"
 edition = "2024"
 authors = ["PitchBlackNights <pitchblacknights@proton.me>"]
 repository = "https://github.com/oxidizemc/oxidizemc-fabric"
+documentation = "https://docs.rs/oxidizemc-fabric"
+keywords = ["java", "minecraft", "modding"]
+categories = ["api-bindings"]
 license = "MIT"
 readme = "README.md"
 
 [dependencies]
-jsys = { path = "./jsys" }
-java-oxide = { git = "https://github.com/OxidizeMC/java-oxide", rev = "1e36ecbeeef8536a4d3370ffd0dc293ddce23294" }
+oxidizemc-fabric-bindings = { path = "./bindings" }
+# oxidizemc-fabric-bindings = "0.1"
+oxidizemc-fabric-derive = { path = "./derive", optional = true }
+# oxidizemc-fabric-derive = "0.1"
+java-oxide = "0.1"
+toml = { version = "0.9", optional = true, features = ["parse", "serde"]}
+
+[features]
+default = [
+    "derive",
+    "build"
+]
+derive = ["dep:oxidizemc-fabric-derive"]
+build = ["dep:toml"]
 
 [workspace]
-members = ["jsys", "xtask"]
+members = ["derive", "bindings", "xtask"]

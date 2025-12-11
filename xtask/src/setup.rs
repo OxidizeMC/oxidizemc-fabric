@@ -93,20 +93,21 @@ fn install_jog() {
         std::fs::remove_dir_all(JOG_PATH).unwrap();
     }
 
-    println!("  - Cloning 'OxidizeMC/java-oxide'...");
+    println!("  - Cloning 'OxidizeMC/java-oxide-gen'...");
     run_cmd_stdout(
         "git",
-        &["clone", "https://github.com/OxidizeMC/java-oxide"],
+        &["clone", "https://github.com/OxidizeMC/java-oxide-gen"],
         Some(INSTALL_DIR),
         Stdio::null(),
         Some(Stdio::null()),
     )
     .unwrap();
+    fix_cargo_manifest(JOG_PATH);
 
     println!("  - Building 'java-oxide-gen'...");
     run_cmd(
         "cargo",
-        &["build", "-p", "java-oxide-gen"],
+        &["build"],
         Some(JOG_PATH),
     )
     .unwrap();
