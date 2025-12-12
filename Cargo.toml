@@ -12,20 +12,19 @@ license = "MIT"
 readme = "README.md"
 
 [dependencies]
+oxidizemc = { path = "../oxidizemc", default-features = false, features = ["default_no_derive"] }
+# oxidizemc = { version = "0.1", default-features = false, features = ["default_no_derive"] }
 oxidizemc-fabric-bindings = { path = "./bindings" }
 # oxidizemc-fabric-bindings = "0.1"
-oxidizemc-fabric-derive = { path = "./derive", optional = true }
-# oxidizemc-fabric-derive = "0.1"
 java-oxide = "0.1"
 toml = { version = "0.9", optional = true, features = ["parse", "serde"]}
 
 [features]
 default = [
-    "derive",
     "build"
 ]
-derive = ["dep:oxidizemc-fabric-derive"]
-build = ["dep:toml"]
+build = ["dep:toml", "oxidizemc/build"]
 
 [workspace]
-members = ["derive", "bindings", "xtask"]
+resolver = "2"
+members = ["bindings", "xtask"]

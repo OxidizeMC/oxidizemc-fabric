@@ -202,12 +202,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "384b8ab6d37215f3c5301a95a4accb5d64aa607f1fcb26a11b5303878451b4fe"
 
 [[package]]
+name = "oxidizemc"
+version = "0.0.0-dev.1"
+dependencies = [
+ "java-oxide",
+]
+
+[[package]]
 name = "oxidizemc-fabric"
 version = "0.0.0-dev.1"
 dependencies = [
  "java-oxide",
+ "oxidizemc",
  "oxidizemc-fabric-bindings",
- "oxidizemc-fabric-derive",
  "toml",
 ]
 
@@ -216,15 +223,6 @@ name = "oxidizemc-fabric-bindings"
 version = "0.0.0-dev.1"
 dependencies = [
  "java-oxide",
-]
-
-[[package]]
-name = "oxidizemc-fabric-derive"
-version = "0.0.0-dev.1"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn 2.0.111",
 ]
 
 [[package]]
